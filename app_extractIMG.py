@@ -4,7 +4,7 @@ import base64
 from urllib.parse import urlparse
 from pathlib import Path
 
-# === הגדרות ===
+# Settings
 har_file_path = "macosicons.com.har"
 output_folder = "output_images_clean_names"
 
@@ -27,7 +27,7 @@ for entry in entries:
         try:
             image_data = base64.b64decode(raw_text)
 
-            # חילוץ שם קובץ מה-URL
+
             full_name = os.path.basename(urlparse(url).path)
             if "low_res_" in full_name:
                 clean_name = full_name.split("low_res_")[1]
